@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    %= stylesheet "/css/site.css"
+  </head>
+  <body>
+    % if ($self->session('user_id')) {
+    <ul id="navbar">
+      <li><%= link_to plan => begin %>План<% end %></li>
+      <li><%= link_to income => begin %>Приход<% end %></li>
+      <li><%= link_to logout => begin %>Выйти<% end %></li>
+    </ul>
+    % }
+    <%= content %>
+  </body>
+</html>

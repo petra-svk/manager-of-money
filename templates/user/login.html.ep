@@ -1,0 +1,18 @@
+% layout 'default';
+% title 'Вход в личный кабинет';
+<style type="text/css">
+.error {  color: red; }
+</style>
+%= form_for login => ( enctype => 'multipart/form-data', method=> 'POST' ) => begin
+<% if( $c->param('email') || $c->param('pass') ) { %>
+<p class="error">Неверно указаны E-mail или Пароль.</p>
+<% } %>
+Ваш E-mail:
+%= email_field 'email', placeholder => 'nospam@example.com', autofocus => ''
+<br><br>
+Пароль:
+%= password_field 'pass'
+<br><br>
+%= submit_button 'Войти'
+%= csrf_field
+% end

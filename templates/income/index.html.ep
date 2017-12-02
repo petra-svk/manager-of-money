@@ -1,0 +1,36 @@
+% layout 'default';
+% title 'Приход';
+
+%= form_for add_income => ( enctype => 'multipart/form-data', method=> 'POST' ) => begin
+<fieldset>
+  <legend>Добавить приход</legend>
+  <p><%= stash('error') %></p>
+  %= input_tag 'sum', type => 'text', autofocus => '', placeholder => '50000'
+  &nbsp;&nbsp;
+  %= select_field income_type_id => $income_type_loop, name => 'income_type_id'
+  &nbsp;&nbsp;
+  %= date_field date => $current_date
+  &nbsp;&nbsp;
+  %= csrf_field
+  %= submit_button 'Добавить'
+</fieldset>
+% end
+<br>
+
+% if(scalar(@$income_loop)) {
+<table class="tftable" border="1">
+<tr>
+  <th>Дата</th>
+  <th>Источник</th>
+  <th>Сумма</th>
+</tr>
+% for my $item (@$income_loop) {
+<tr><td><%= $item->{ date } %></td><td><%= $item->{ title } %></td><td><%= $item->{ sum } %></td></tr>
+% }
+<tr>
+  <th>&nbsp;</th>
+  <th>Итого:</th>
+  <th>27 0000 руб.</th>
+</tr>
+</table>
+% }

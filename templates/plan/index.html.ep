@@ -1,0 +1,50 @@
+% layout 'default';
+% title 'Текущий план расходов';
+
+%= form_for edit_plan => ( enctype => 'multipart/form-data', method=> 'POST' ) => begin
+<p>Период <input type="text" name="date_from" value="<%= $date_from %>"> -
+<input type="text" name="date_to" value="<%= $date_to %>"> (текущий)</p>
+<p>Доход предыдущего периода: <input type="text" size="8" name="total_income" value="<%= $total_income %>"> руб.</p>
+<p>На продукты в день: <b><%= $for_food_per_day %></b> руб.</p>
+<table class="tftable" border="1">
+<tr>
+  <th>Категория</th>
+  <th>Процент от дохода, %</th>
+  <th>Накоплено</th>
+  <th>Приход от дохода</th>
+  <th>Итого</th>
+  <th>Расходы</th>
+  <th>Осталось</th>
+</tr>
+% for my $item (@$plan_for_month_loop) {
+<tr>
+  <td><%= $item->{ expense_category_title } %><input type="hidden" name="expense_category_id<%= $item->{ expense_category_id } %>" value="<%= $item->{ expense_category_id } %>"></td>
+  <td><input type="text" name="percent_from_income<%= $item->{ expense_category_id } %>" value="<%= $item->{ percent_from_income } %>"></td>
+  <td><input type="text" name="accumulated<%= $item->{ expense_category_id } %>" value="<%= $item->{ accumulated } %>"> </td>
+  <td><input type="text" name="income<%= $item->{ expense_category_id } %>" readonly value="<%= $item->{ show_income } %>"></td>
+  <td><input type="text" name="total<%= $item->{ expense_category_id } %>" readonly value="<%= $item->{ show_total } %>"></td>
+  <td>
+    <input type="text" name="expenses<%= $item->{ expense_category_id } %>" readonly value="<%= $item->{ expenses } %>">
+    <br><br>
+    <input type="text" name="expenses_add<%= $item->{ expense_category_id } %>" value="" placeholder="Например, 450+34.5">
+  </td>
+  <td><input type="text" name="remaining<%= $item->{ expense_category_id } %>" readonly value="<%= $item->{ show_remaining } %>"></td>
+</tr>
+% }
+<tr>
+  <th>Итого</th>
+  <th><%= $percent_from_income %> %</th>
+  <th><%= $accumulated %> руб.</th>
+  <th><%= $income %> руб.</th>
+  <th><%= $total %> руб.</th>
+  <th><%= $expenses %> руб.</th>
+  <th><%= $remaining %> руб.</th>
+</tr>
+</table>
+<br clear="all">
+<div><input type="submit" name="edit_plan_for_month" value="Обновить"></div>
+<br><br>
+<div><%= link_to Создать => 'create_plan' %></div>
+% end
+
+

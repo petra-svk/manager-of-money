@@ -1,0 +1,51 @@
+/* begin navbar */
+
+#navbar {
+  margin: 0px 0px 10px 0px;
+  padding: 0px;
+  list-style-type: none;
+  border: 2px solid #8f9092;
+  border-radius: 5px 5px;
+  width: 550px;
+  text-align: center;
+  background-color: #24292e;
+}
+
+#navbar li { display: inline; }
+
+#navbar a {
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  width: 100px;
+}
+#navbar a:hover {
+  border-radius: 5px 5px;
+  background-color: #0066FF;
+}
+
+/* end navbar */
+
+/*  begin plan */
+.tftable {font-size:13px;color:#333333;width:100%;border-width: 1px;border-color: #9dcc7a;border-collapse: collapse; width: 70%;}
+.tftable th {font-size:13px;background-color:#abd28e;border-width: 1px;padding: 8px;border-style: solid;border-color: #9dcc7a;text-align:left;}
+.tftable tr {background-color:#ffffff;}
+.tftable td {font-size:13px;border-width: 1px;padding: 8px;border-style: solid;border-color: #9dcc7a;}
+.tftable tr:hover {background-color:#ffff99;}
+/* end plan */
+
+
+/* begin income */
+fieldset {
+  width: 40%;
+  padding: 15px 15px;
+}
+legend {
+  font-weight: bold;
+}
+.field-with-error {
+  border: 1px solid red;
+}
+/* end income */
