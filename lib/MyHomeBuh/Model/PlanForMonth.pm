@@ -1,8 +1,10 @@
 package MyHomeBuh::Model::PlanForMonth;
 use Mojo::Base 'MyHomeBuh::Model::Entity';
 use MyHomeBuh::Model::ExpenseCategory;
+use MyHomeBuh::Model::User;
 
 use autouse 'Data::Dumper' => qw(Dumper);
+use autouse 'Carp' => qw(croak);
 
 has table => sub { 'plan_for_month' };
 has ['date_from', 'date_to'];
@@ -204,9 +206,13 @@ sub create_from_prev
     unless($m->add($_)) { croak("Can't add new plan for category - ".Dumper($_)); }
   }
 
-  # TODO в user обновить date_from и date_to
+  my $new_date_interval = { date_from => $date_from_new, date_to => $date_to_new };
 
-  return { date_from => $date_from_new, date_to => $date_to_new };
+  my $user_obj = 'MyHomeBuh::Model::User'->new( user_id=>$m->user_id );
+  $user_obj->update_prev_income( $params{income} );
+  $user_obj->update_date_interval( $new_date_interval );
+
+  return $new_date_interval;
 }
 
 

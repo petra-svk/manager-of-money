@@ -36,5 +36,15 @@ sub get_income_loop
 }
 
 
+=head2 calc_income
+=cut
+sub calc_income
+{
+  my ($m) = @_;
+  return $m->dbh->do_sql_row("SELECT SUM(sum) FROM `income` WHERE `date` BETWEEN ? AND ?  AND user_id=?",
+                            [$m->date_from, 'str', $m->date_to, 'str', $m->user_id, 'int']) || 0;
+}
+
+
 
 1;

@@ -14,7 +14,8 @@ sub index
     template => 'income/index',
     income_type_loop => $c->get_model('Income')->income_type_for_select,
     current_date => Time::Moment->now->strftime("%Y-%m-%d"),
-    income_loop => $c->get_model('Income')->get_income_loop
+    income_loop => $c->get_model('Income')->get_income_loop,
+    total_income => $c->get_model('Income')->calc_income
   );
 }
 

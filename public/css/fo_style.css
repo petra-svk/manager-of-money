@@ -1,0 +1,127 @@
+/* GENERAL STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html {
+  height: 100vh;
+}
+body {
+  min-height: 100vh;
+  /* font-family: 'Philosopher', sans-serif; */
+  font-family: 'Jura', sans-serif;
+}
+
+div {
+  /* border: 1px solid #000000; */
+}
+
+a {
+  color: #656363;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  font-size: 13px;
+}
+
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #04d004;
+  border-color: #04d004;
+}
+
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+    color: #FFF;
+    background-color: #03b903;
+    border-color: #03b903;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -142px;
+  /* the bottom margin is the negative value of the footer's height */
+}
+
+footer,
+.push {
+  height: 142px;
+  /* .push must be the same height as .footer */
+}
+
+
+/* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.logo b {
+  color: #04d004;
+}
+
+.logo small {
+  display: block;
+  font-size: 1.4rem;
+}
+
+header {
+  /* text-align: center; */
+}
+
+.menu {
+  border-bottom: 1px solid #d0cece;
+}
+
+.menu>.two.columns {
+  margin-top: 1%;
+}
+
+
+.navbar ul {
+  list-style: none;
+  margin-bottom: 0rem;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+header h4 {
+  margin-top: 3rem;
+}
+
+header p, h5, h4 {
+  text-align: center;
+}
+
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.main {
+  text-align: center;
+}
+
+.erb-image-wrapper img {
+  max-width: 100% !important;
+  height: auto;
+  display: inline-block;
+}
+
+
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+footer p {
+  text-align: center;
+  vertical-align: bottom;
+}
+

@@ -1,6 +1,41 @@
 % layout 'blog';
-% title 'Блог';
+% title 'Деньги любят счет!';
 
-<p>Добро пожаловать на портал планирования Личного Бюджета!</p>
-<p>Наша цель - помочь в организации учета расходов и создании несгораемых накоплений.</p>
-<div><%= link_to 'Войти в личный кабинет' => 'plan' %></div>
+<div class="wrapper">
+  <header class="container">
+    <div class="row menu">
+      <div class="ten columns">
+        <div class="logo">
+          <b>M</b>y-<b>B</b>udget.ru<small>Деньги любят счет!</small>
+        </div>
+      </div>
+      <div class="two columns">
+        <nav class="navbar">
+          <ul>
+            <li><%= link_to 'Войти' => 'plan', class => 'button button-primary' %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <h4>Добро пожаловать на портал планирования Личного Бюджета!</h4>
+        <h5>Наша цель - помочь Вам<br>в организации учета расходов<br>и<br>создании несгораемых накоплений.</h5>
+        <p><%= link_to 'Войти в личный кабинет' => 'plan', class => 'button button-primary' %></p>
+      </div>
+    </div>
+  </header>
+  <section class="container">
+    <div class="row main">
+      <div class="erb-image-wrapper twelve columns"><img src="https://tv2.by/wp-content/uploads/2017/12/budjet-678x381.jpg" alt="Планируем свой бюджет"></div>
+    </div>
+  </section>
+  <div class="push"></div>
+</div>
+<footer class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <p>&copy; 2018 ASK  </p>
+    </div>
+  </div>
+</footer>

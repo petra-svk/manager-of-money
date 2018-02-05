@@ -30,7 +30,7 @@
 <tr>
   <th>&nbsp;</th>
   <th>Итого:</th>
-  <th>27 0000 руб.</th>
+  <th><%= $total_income %> руб.</th>
 </tr>
 </table>
 % }

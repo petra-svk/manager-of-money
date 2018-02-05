@@ -3,13 +3,13 @@ use Mojo::Base -base;
 
 use MyHomeBuh::LIB::MysqlDB;
 use autouse 'Data::Dumper' => qw(Dumper);
+use autouse 'Carp' => qw(croak);
 
-sub croak {require Carp; Carp::croak(@_)}
 
 has 'dbh' => sub {
-  my $database = 'myhomebuh';
-  my $user = 'myhomebuh';
-  my $password = 'Hdw7d_2d@slsa;';
+  my $database = 'XXX';
+  my $user = 'XXX';
+  my $password = 'XXX';
   state $dbh = MyHomeBuh::LIB::MysqlDB->new(database=>$database, db_user=>$user, db_password=>$password);
 };
 
